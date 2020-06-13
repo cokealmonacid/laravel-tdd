@@ -28,11 +28,11 @@ class BooksController extends Controller
     	return redirect('/books');
     }
 
-    public function validateRequest()
+    protected function validateRequest()
     {
-		return request()->validate([
-		    		'title' => 'required',
-		    		'author' => 'required'
-		    ]);
+        return request()->validate([
+            'title' => 'required',
+            'author_id' => 'required',
+        ]);
     }
 }
